@@ -9,32 +9,34 @@ type TimeDealItemProps = {
 };
 
 const TimeDealItem = ({ item, isOpen }: TimeDealItemProps) => (
-  <Card className='w-full'>
-    <figure className='relative'>
-      <Card.Image
-        src={item.image}
-        alt={item.title}
-        className='border rounded-10'
-      />
-      {!isOpen && <Mask title='오픈 예정' />}
-    </figure>
-    <Card.Content>
-      <Card.Title title={item.title} />
-
-      <div>
-        <p className='text-gray-500 line-through' aria-label='원래 가격'>
-          {item.originalPrice.toLocaleString()}원
-        </p>
-        <Card.Price
-          discountRate={item.discountRate}
-          discountedPrice={item.discountedPrice}
-          aria-label={`할인된 가격: ${item.discountedPrice.toLocaleString()}원, 할인율: ${
-            item.discountRate
-          }%`}
+  <a>
+    <Card className='w-full'>
+      <figure className='relative'>
+        <Card.Image
+          src={item.image}
+          alt={item.title}
+          className='border rounded-10'
         />
-      </div>
-    </Card.Content>
-  </Card>
+        {!isOpen && <Mask title='오픈 예정' />}
+      </figure>
+      <Card.Content>
+        <Card.Title title={item.title} />
+
+        <div>
+          <p className='text-gray-500 line-through' aria-label='원래 가격'>
+            {item.originalPrice.toLocaleString()}원
+          </p>
+          <Card.Price
+            discountRate={item.discountRate}
+            discountedPrice={item.discountedPrice}
+            aria-label={`할인된 가격: ${item.discountedPrice.toLocaleString()}원, 할인율: ${
+              item.discountRate
+            }%`}
+          />
+        </div>
+      </Card.Content>
+    </Card>
+  </a>
 );
 
 export default memo(TimeDealItem);

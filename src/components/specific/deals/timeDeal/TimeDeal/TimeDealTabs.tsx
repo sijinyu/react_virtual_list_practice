@@ -1,34 +1,40 @@
 import { TimeDealType } from '@/types';
-import TabButton from './TimeDealTabButton';
+import TimeDealTabButton from './TimeDealTabButton';
+
+type TabInfo = {
+  label: string;
+  isOpen: boolean;
+};
 
 type TimeDealTabsProps = {
   activeTab: TimeDealType;
   onTabChange: (tab: TimeDealType) => void;
-  currentTabLabel: string;
-  nextTabLabel: string;
+  currentTab: TabInfo;
+  nextTab: TabInfo | null;
 };
 
 const TimeDealTabs = ({
   activeTab,
   onTabChange,
-  currentTabLabel,
-  nextTabLabel,
+  currentTab,
+  nextTab,
 }: TimeDealTabsProps) => {
-  const tabs = [
-    { label: currentTabLabel, type: 'current' as TimeDealType },
-    { label: nextTabLabel, type: 'next' as TimeDealType },
-  ];
+  const isActive = activeTab === 'current';
 
   return (
     <div className='flex border-b py-10'>
-      {tabs.map((tab) => (
-        <TabButton
-          key={tab.type}
-          label={tab.label}
-          isActive={activeTab === tab.type}
-          onClick={() => onTabChange(tab.type)}
+      <TimeDealTabButton
+        isActive={isActive}
+        label={currentTab.label}
+        onClick={() => onTabChange('current')}
+      />
+      {nextTab && (
+        <TimeDealTabButton
+          isActive={!isActive}
+          label={nextTab.label}
+          onClick={() => onTabChange('next')}
         />
-      ))}
+      )}
     </div>
   );
 };
