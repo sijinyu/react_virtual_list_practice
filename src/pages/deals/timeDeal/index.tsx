@@ -1,22 +1,29 @@
-import { Header } from "@/components";
-import { webPath } from "@/router";
-import { useNavigate } from "react-router-dom";
-
-import styles from "./index.module.css";
+import { Header } from '@/components';
+import { LureDealSection } from '@/components/specific/deals/timeDeal/LureDeal';
+import { BrandDealSection } from '@/components/specific/deals/timeDeal/brandDeal';
+import { ErrorBoundary } from 'react-error-boundary';
+import { ErrorFallback } from '@/components/unit/ErrorFallback';
+import { FullScreenError } from '@/components/unit/FullScreenError';
+import TimeDealSection from '@/components/specific/deals/timeDeal/TimeDeal/TimeDealSectionObserver';
 
 const TimeDeal = () => {
-  const navigate = useNavigate();
-
-  const handleClickGoToBrandDeal = () => {
-    navigate(webPath.brandDeal());
-  };
-
   return (
     <div>
-      <Header title="타임딜" isBackButtonVisible={false} />
-      <button className={styles.button} onClick={handleClickGoToBrandDeal}>
-        브랜드딜 바로가기
-      </button>
+      <Header title='타임특가' isBackButtonVisible={false} />
+      <ErrorBoundary FallbackComponent={ErrorFallback} onReset={() => {}}>
+        <LureDealSection />
+      </ErrorBoundary>
+      <ErrorBoundary FallbackComponent={ErrorFallback} onReset={() => {}}>
+        <BrandDealSection />
+      </ErrorBoundary>
+      <ErrorBoundary
+        FallbackComponent={FullScreenError}
+        onReset={() => {
+          window.location.reload();
+        }}
+      >
+        <TimeDealSection />
+      </ErrorBoundary>
     </div>
   );
 };

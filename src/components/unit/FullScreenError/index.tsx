@@ -1,7 +1,7 @@
 import React from 'react';
 import { FallbackProps } from 'react-error-boundary';
 
-const FullScreenError: React.FC<FallbackProps> = ({
+export const FullScreenError: React.FC<FallbackProps> = ({
   error,
   resetErrorBoundary,
 }) => (
@@ -19,5 +19,3 @@ const FullScreenError: React.FC<FallbackProps> = ({
     </div>
   </div>
 );
-
-export default FullScreenError;
