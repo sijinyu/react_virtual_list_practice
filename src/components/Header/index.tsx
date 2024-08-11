@@ -1,9 +1,9 @@
-import { memo } from "react";
+import { memo } from 'react';
 
-import { Chevron } from "@/assets";
-import { useNavigate } from "react-router-dom";
+import { Chevron } from '@/assets';
+import { useNavigate } from 'react-router-dom';
 
-import styles from "./index.module.css";
+import styles from './index.module.css';
 
 export type HeaderProps = {
   title: string;
@@ -20,9 +20,9 @@ export const Header = memo(({ title, isBackButtonVisible }: HeaderProps) => {
   return (
     <header className={styles.wrapper}>
       {isBackButtonVisible && (
-        <div className={styles.backButton} onClick={handleClickBack}>
+        <button className={styles.backButton} onClick={handleClickBack}>
           <Chevron />
-        </div>
+        </button>
       )}
       {title}
     </header>

@@ -3,7 +3,10 @@ type ErrorFallbackProps = {
   resetErrorBoundary: () => void;
 };
 
-const ErrorFallback = ({ error, resetErrorBoundary }: ErrorFallbackProps) => (
+export const ErrorFallback = ({
+  error,
+  resetErrorBoundary,
+}: ErrorFallbackProps) => (
   <div className='text-red-500 p-4 border border-red-300 rounded'>
     <p>{error.message}</p>
     <button
@@ -14,5 +17,3 @@ const ErrorFallback = ({ error, resetErrorBoundary }: ErrorFallbackProps) => (
     </button>
   </div>
 );
-
-export default ErrorFallback;

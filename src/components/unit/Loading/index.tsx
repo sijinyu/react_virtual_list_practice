@@ -1,3 +1,1 @@
-const Loading = () => <div>로딩 중...</div>;
-
-export default Loading;
+export const Loading = () => <div>로딩 중...</div>;
