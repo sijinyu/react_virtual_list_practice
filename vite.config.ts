@@ -43,9 +43,10 @@ export default defineConfig({
         changeOrigin: true,
         rewrite: (path) =>
           path.replace(/^\/api\/search/, '/v1/search/shop.json'),
+
         headers: {
-          'X-Naver-Client-Id': process.env.VITE_NAVER_CLIENT_ID,
-          'X-Naver-Client-Secret': process.env.VITE_NAVER_CLIENT_SECRET,
+          'X-Naver-Client-Id': process.env.VITE_NAVER_CLIENT_ID ?? '',
+          'X-Naver-Client-Secret': process.env.VITE_NAVER_CLIENT_SECRET ?? '',
         },
       },
     },
