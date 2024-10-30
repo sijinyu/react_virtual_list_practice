@@ -1,9 +1,9 @@
 import { queryKeys } from '@/constants';
 import { fetchBrandDeals } from '@/services/api';
 import { useInfiniteQuery } from '@tanstack/react-query';
-import { BrandDealResponse } from '@/types';
+import { TBrandDealResponse } from '@/types';
 
-export const useBrandDealsInfinite = (initialData?: BrandDealResponse) => {
+export const useBrandDealsInfinite = (initialData?: TBrandDealResponse) => {
   return useInfiniteQuery({
     queryKey: [queryKeys.BRNAD_DEALS],
     queryFn: ({ pageParam = 1 }) => fetchBrandDeals(pageParam),

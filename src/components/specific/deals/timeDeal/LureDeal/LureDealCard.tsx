@@ -1,12 +1,12 @@
 import Card from '@/components/unit/Card';
-import { LureDeal } from '@/types';
+import { TLureDeal } from '@/types';
 import { memo } from 'react';
 
-type LureDealCardProps = {
-  deal: LureDeal;
+type TLureDealCardProps = {
+  deal: TLureDeal;
 };
 
-const LureDealCard = ({ deal }: LureDealCardProps) => (
+const LureDealCard = ({ deal }: TLureDealCardProps) => (
   <a className='cursor'>
     <Card className='w-146 h-227 rounded-12'>
       <Card.Image src={deal.image} alt={deal.title} />

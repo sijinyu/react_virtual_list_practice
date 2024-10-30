@@ -5,12 +5,12 @@ import { useNavigate } from 'react-router-dom';
 
 import styles from './index.module.css';
 
-export type HeaderProps = {
+export type THeaderProps = {
   title: string;
   isBackButtonVisible: boolean;
 };
 
-export const Header = memo(({ title, isBackButtonVisible }: HeaderProps) => {
+export const Header = memo(({ title, isBackButtonVisible }: THeaderProps) => {
   const navigate = useNavigate();
 
   const handleClickBack = () => {

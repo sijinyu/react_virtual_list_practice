@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { TimeDealResponse } from '@/types';
+import { TTimeDealResponse } from '@/types';
 import { InfiniteData } from '@tanstack/react-query';
 
 export const GRID_CONSTANTS = {
@@ -10,15 +10,15 @@ export const GRID_CONSTANTS = {
   MIN_ITEM_HEIGHT: 277,
 };
 
-type UseTimeDealGridProps = {
-  timeDealPagesData: InfiniteData<TimeDealResponse> | undefined;
+type TUseTimeDealGridProps = {
+  timeDealPagesData: InfiniteData<TTimeDealResponse> | undefined;
   hasNextPage: boolean;
 };
 
 export const useTimeDealGrid = ({
   hasNextPage,
   timeDealPagesData,
-}: UseTimeDealGridProps) => {
+}: TUseTimeDealGridProps) => {
   const items = useMemo(
     () => timeDealPagesData?.pages.flatMap((page) => page.itemList) || [],
     [timeDealPagesData]

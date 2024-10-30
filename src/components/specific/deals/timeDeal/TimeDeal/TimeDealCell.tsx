@@ -1,10 +1,10 @@
 import TimeDealItem from './TimeDealItem';
-import { GetCellData } from '@/types';
+import { TGetCellData } from '@/types';
 
 type TimeDealCellProps = {
   columnIndex: number;
   rowIndex: number;
-  data: GetCellData;
+  data: TGetCellData;
 };
 
 const TimeDealCell = ({ columnIndex, rowIndex, data }: TimeDealCellProps) => {

@@ -1,9 +1,9 @@
 import { useInfiniteQuery } from '@tanstack/react-query';
-import { TimeDealType } from '@/types';
+import { TTimeDealType } from '@/types';
 import { fetchTimeDeals } from '@/services/api';
 import { queryKeys } from '@/constants';
 
-export const useTimeDeal = (initialType: TimeDealType) => {
+export const useTimeDeal = (initialType: TTimeDealType) => {
   return useInfiniteQuery({
     queryKey: [queryKeys.TIME_DEALS, initialType],
     queryFn: ({ pageParam = 1 }) => fetchTimeDeals(initialType, pageParam),

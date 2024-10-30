@@ -1,13 +1,13 @@
 import Card from '@/components/unit/Card';
 import { useCountdown } from '@/hooks/useCountdown';
-import { BrandDeal } from '@/types';
+import { TBrandDeal } from '@/types';
 import { memo } from 'react';
 
-type BrandDealCardProps = {
-  deal: BrandDeal;
+type TBrandDealCardProps = {
+  deal: TBrandDeal;
 };
 
-const BrandDealCard = ({ deal }: BrandDealCardProps) => {
+const BrandDealCard = ({ deal }: TBrandDealCardProps) => {
   const timeLeft = useCountdown(deal.discountEndDate);
 
   return (

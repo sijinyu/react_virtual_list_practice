@@ -1,10 +1,10 @@
 import { useCallback, useMemo } from 'react';
 import { isTimeDealOpen } from '@/utils';
 import { GRID_CONSTANTS } from './useTimeDealGrid';
-import { CellData, TimeDealItem } from '@/types';
+import { TCellData, TTimeDealItem } from '@/types';
 
 export const useTimeDealCell = (
-  items: TimeDealItem[],
+  items: TTimeDealItem[],
   isItemLoaded: (index: number) => boolean
 ) => {
   const isOpen = useMemo(() => isTimeDealOpen(new Date().getHours()), []);
@@ -14,7 +14,7 @@ export const useTimeDealCell = (
       columnIndex: number,
       rowIndex: number,
       style: React.CSSProperties
-    ): CellData => {
+    ): TCellData => {
       const itemIndex = rowIndex * GRID_CONSTANTS.COLUMN_COUNT + columnIndex;
 
       if (!isItemLoaded(itemIndex)) {

@@ -1,38 +1,28 @@
 import { memo } from 'react';
 import Card from '@/components/unit/Card';
-import { TimeDealItem as TimeDealItemType } from '@/types';
+import { TTimeDealItem as TimeDealItemType } from '@/types';
 import { Mask } from '@/components/unit';
 
-type TimeDealItemProps = {
+type TTimeDealItemProps = {
   item: TimeDealItemType;
   isOpen: boolean;
 };
 
-const TimeDealItem = ({ item, isOpen }: TimeDealItemProps) => (
-  <a>
-    <Card className='w-full'>
-      <figure className='relative'>
+const TimeDealItem = ({ item, isOpen }: TTimeDealItemProps) => (
+  <a referrerPolicy='no-referrer' className='flex flex-col w-full'>
+    <Card className='w-full flex-1'>
+      <figure className='relative aspect-square'>
         <Card.Image
           src={item.image}
           alt={item.title}
-          className='border rounded-10'
+          className='absolute top-0 left-0 w-full h-full object-contain p-2 border rounded-10 bg-white'
         />
         {!isOpen && <Mask title='오픈 예정' />}
       </figure>
       <Card.Content>
         <Card.Title title={item.title} />
-
         <div>
-          <p className='text-gray-500 line-through' aria-label='원래 가격'>
-            {item.originalPrice.toLocaleString()}원
-          </p>
-          <Card.Price
-            discountRate={item.discountRate}
-            discountedPrice={item.discountedPrice}
-            aria-label={`할인된 가격: ${item.discountedPrice.toLocaleString()}원, 할인율: ${
-              item.discountRate
-            }%`}
-          />
+          <Card.Price discountedPrice={item.discountedPrice} />
         </div>
       </Card.Content>
     </Card>

@@ -1,16 +1,16 @@
-import { BrandDeal } from '@/types';
+import { TBrandDeal } from '@/types';
 import { ScrollMenu } from 'react-horizontal-scrolling-menu';
 import BrandDealCard from './BrandDealCard';
 
-type BrandDealListViewProps = {
-  deals: BrandDeal[];
+type TBrandDealListViewProps = {
+  deals: TBrandDeal[];
   onGoToBrandDeal: () => void;
 };
 
 const BrandDealListView = ({
   deals,
   onGoToBrandDeal,
-}: BrandDealListViewProps) => {
+}: TBrandDealListViewProps) => {
   return (
     <section className='flex flex-col px-16 pb-16'>
       <header className='flex justify-between'>

@@ -1,14 +1,14 @@
-import { LureDeal } from '@/types';
+import { TLureDeal } from '@/types';
 import { memo } from 'react';
 import { ScrollMenu } from 'react-horizontal-scrolling-menu';
 import 'react-horizontal-scrolling-menu/dist/styles.css';
 import LureDealCard from './LureDealCard';
 
-type LureDealListViewProps = {
-  deals: LureDeal[];
+type TLureDealListViewProps = {
+  deals: TLureDeal[];
 };
 
-const LureDealListView = ({ deals }: LureDealListViewProps) => (
+const LureDealListView = ({ deals }: TLureDealListViewProps) => (
   <section className='bg-orange-500 pb-32 px-16'>
     <header>
       <h2 className='text-white text-xl font-bold mb-4 pt-16 pb-10'>

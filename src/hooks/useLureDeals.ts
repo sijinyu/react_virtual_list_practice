@@ -1,10 +1,10 @@
 import { useQuery } from '@tanstack/react-query';
 import { fetchLureDeals } from '@/services/api';
-import { LureDeal } from '@/types';
+import { TLureDeal } from '@/types';
 import { queryKeys } from '@/constants/queryKeys';
 
 export const useLureDeals = () => {
-  const { data, error, isLoading, isError } = useQuery<LureDeal[], Error>({
+  const { data, isLoading, isError } = useQuery<TLureDeal[], Error>({
     queryKey: [queryKeys.LURE_DEALS],
     queryFn: fetchLureDeals,
   });

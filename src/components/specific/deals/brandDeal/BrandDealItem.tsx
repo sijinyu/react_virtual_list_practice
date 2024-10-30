@@ -1,12 +1,12 @@
-import { BrandDeal } from '@/types';
+import { TBrandDeal } from '@/types';
 import { useInView } from 'react-intersection-observer';
 import { useBrandDealProgress } from '@/hooks/useBrandDealProgess';
 
-type BrandDealItemProps = {
-  deal: BrandDeal;
+type TBrandDealItemProps = {
+  deal: TBrandDeal;
 };
 
-const BrandDealItem = ({ deal }: BrandDealItemProps) => {
+const BrandDealItem = ({ deal }: TBrandDealItemProps) => {
   const { ref, inView } = useInView({ triggerOnce: true });
   const progress = useBrandDealProgress(inView, deal.stockPercentage);
 

@@ -1,16 +1,16 @@
-import { TimeDealType } from '@/types';
+import { TTimeDealType } from '@/types';
 import TimeDealTabButton from './TimeDealTabButton';
 
-type TabInfo = {
+type TTabInfo = {
   label: string;
   isOpen: boolean;
 };
 
-type TimeDealTabsProps = {
-  activeTab: TimeDealType;
-  onTabChange: (tab: TimeDealType) => void;
-  currentTab: TabInfo;
-  nextTab: TabInfo | null;
+type TTimeDealTabsProps = {
+  activeTab: TTimeDealType;
+  onTabChange: (tab: TTimeDealType) => void;
+  currentTab: TTabInfo;
+  nextTab: TTabInfo | null;
 };
 
 const TimeDealTabs = ({
@@ -18,7 +18,7 @@ const TimeDealTabs = ({
   onTabChange,
   currentTab,
   nextTab,
-}: TimeDealTabsProps) => {
+}: TTimeDealTabsProps) => {
   const isActive = activeTab === 'current';
 
   return (

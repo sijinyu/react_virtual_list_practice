@@ -1,6 +1,6 @@
 import { useEffect, useState, useCallback, ReactNode } from 'react';
 
-type WindowScrollerProps = {
+type TWindowScrollerProps = {
   cellHeight: number;
   children: (props: {
     height: number;
@@ -15,10 +15,10 @@ const HEADER_OFFSET = 46;
 const TAB_OFFSET = 45;
 const TIME_INTERVAL = 45;
 
-export const WindowScroller: React.FC<WindowScrollerProps> = ({
+export const WindowScroller = ({
   cellHeight,
   children,
-}) => {
+}: TWindowScrollerProps) => {
   const [height, setHeight] = useState(window.innerHeight);
   const [isScrolling, setIsScrolling] = useState(false);
   const [scrollTop, setScrollTop] = useState(0);

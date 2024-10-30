@@ -1,10 +1,10 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useInView } from 'react-intersection-observer';
-import { BrandDeal } from '@/types';
+import { TBrandDeal } from '@/types';
 import { useBrandDealsInfinite } from '@/hooks/useBrandDealsInfinite';
 
 export const useBrandDealSection = () => {
-  const [deals, setDeals] = useState<BrandDeal[]>([]);
+  const [deals, setDeals] = useState<TBrandDeal[]>([]);
   const { ref, inView } = useInView({
     threshold: 1.0,
     triggerOnce: false,

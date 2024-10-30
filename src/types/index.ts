@@ -1,6 +1,13 @@
 import { CSSProperties } from 'react';
 
-export type LureDeal = {
+export type TNaverShopResponse = {
+  total: number;
+  start: number;
+  display: number;
+  items: TNaverShopItem[];
+};
+
+export type TLureDeal = {
   id: number;
   title: string;
   originalPrice: number;
@@ -9,7 +16,18 @@ export type LureDeal = {
   image: string;
 };
 
-export type BrandDeal = {
+export interface TNaverShopItem {
+  productId: string;
+  title: string;
+  image: string;
+  lprice: string; // 최저가
+  hprice: string; // 정가
+  mallName: string;
+  brand: string;
+  maker: string;
+}
+
+export type TBrandDeal = {
   id: number;
   title: string;
   originalPrice: number;
@@ -20,14 +38,14 @@ export type BrandDeal = {
   discountEndDate: string;
 };
 
-export type BrandDealResponse = {
-  itemList: BrandDeal[];
+export type TBrandDealResponse = {
+  itemList: TBrandDeal[];
   isLastPage: boolean;
 };
 
-export type TimeDealType = 'current' | 'next';
+export type TTimeDealType = 'current' | 'next';
 
-export type TimeDealItem = {
+export type TTimeDealItem = {
   id: number;
   title: string;
   originalPrice: number;
@@ -36,14 +54,14 @@ export type TimeDealItem = {
   image: string;
 };
 
-export type TimeDealResponse = {
-  itemList: TimeDealItem[];
+export type TTimeDealResponse = {
+  itemList: TTimeDealItem[];
   isLastPage: boolean;
 };
 
-export type CellData =
+export type TCellData =
   | {
-      item: TimeDealItem;
+      item: TTimeDealItem;
       isOpen: boolean;
       style: CSSProperties;
       isLoading: false;
@@ -54,4 +72,4 @@ export type CellData =
     }
   | null;
 
-export type GetCellData = (columnIndex: number, rowIndex: number) => CellData;
+export type TGetCellData = (columnIndex: number, rowIndex: number) => CellData;

@@ -1,10 +1,9 @@
-import React from 'react';
 import { FallbackProps } from 'react-error-boundary';
 
-export const FullScreenError: React.FC<FallbackProps> = ({
+export const FullScreenError = ({
   error,
   resetErrorBoundary,
-}) => (
+}: FallbackProps) => (
   <div className='fixed inset-0 bg-red-100 flex items-center justify-center z-50'>
     <div className='text-center'>
       <h1 className='text-2xl font-bold text-red-700 mb-4'>

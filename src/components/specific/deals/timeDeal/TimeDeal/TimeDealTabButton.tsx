@@ -1,4 +1,4 @@
-type TimeDealTabButtonProps = {
+type TTimeDealTabButtonProps = {
   label: string;
   isActive: boolean;
   onClick: () => void;
@@ -8,7 +8,7 @@ const TimeDealTabButton = ({
   label,
   isActive,
   onClick,
-}: TimeDealTabButtonProps) => {
+}: TTimeDealTabButtonProps) => {
   return (
     <button className='flex-1 px-4' onClick={onClick}>
       <span

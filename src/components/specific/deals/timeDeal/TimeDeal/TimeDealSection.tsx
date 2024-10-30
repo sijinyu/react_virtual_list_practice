@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useTimeDealSection } from '@/hooks/useTimeDealSection';
 import { TimeDealSectionView } from './TimeDealSectionView';
 
-export const TimeDealSection: React.FC = () => {
+export const TimeDealSection = () => {
   const {
     tabs,
     nextTabs,
