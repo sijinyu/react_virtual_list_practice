@@ -1,10 +1,11 @@
-import { Header } from '@/components';
-import { LureDealSection } from '@/components/specific/deals/timeDeal/LureDeal';
-import { BrandDealSection } from '@/components/specific/deals/timeDeal/brandDeal';
+import { Header } from '@/components/ui';
+
 import { ErrorBoundary } from 'react-error-boundary';
-import { ErrorFallback } from '@/components/unit/ErrorFallback';
-import { FullScreenError } from '@/components/unit/FullScreenError';
-import { TimeDealSection } from '@/components/specific/deals/timeDeal/TimeDeal/TimeDealSection';
+import { ErrorFallback } from '@/components/ui/ErrorFallback';
+import { FullScreenError } from '@/components/ui/FullScreenError';
+import { TimeDealSection } from '@/features/deals/time/components/TimeDealSection';
+import LureDealSection from '@/features/deals/lure/components/LureDealSection';
+import BrandDealSection from '@/features/deals/brand/components/BrandDealSection';
 
 const TimeDeal = () => {
   return (
