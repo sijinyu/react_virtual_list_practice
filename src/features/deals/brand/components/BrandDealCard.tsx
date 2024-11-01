@@ -23,10 +23,7 @@ const BrandDealCard = ({ deal }: TBrandDealCardProps) => {
             {timeLeft}
           </span>
           <Card.Title title={deal.title} className='mt-2' />
-          <Card.Price
-            discountRate={deal.discountRate}
-            discountedPrice={deal.discountedPrice}
-          />
+          <Card.Price discountedPrice={deal.discountedPrice} />
         </Card.Content>
       </Card>
     </a>

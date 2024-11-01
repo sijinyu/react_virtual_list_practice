@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
-import { fetchLureDeals } from '@/services/api';
-import { TLureDeal } from '@/core/types';
+import { fetchLureDeals } from '../api';
+import { TLureDeal } from '../types';
 import { queryKeys } from '@/constants/queryKeys';
 
 export const useLureDeals = () => {

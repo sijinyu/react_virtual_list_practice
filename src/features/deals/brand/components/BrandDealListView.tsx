@@ -1,6 +1,6 @@
-import { TBrandDeal } from '@/core/types';
 import { ScrollMenu } from 'react-horizontal-scrolling-menu';
 import BrandDealCard from './BrandDealCard';
+import { TBrandDeal } from '../types';
 
 type TBrandDealListViewProps = {
   deals: TBrandDeal[];

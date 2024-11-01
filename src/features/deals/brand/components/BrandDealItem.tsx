@@ -1,6 +1,6 @@
-import { TBrandDeal } from '@/core/types';
 import { useInView } from 'react-intersection-observer';
 import { useBrandDealProgress } from '@/features/deals/brand/hooks/useBrandDealProgess';
+import { TBrandDeal } from '../types';
 
 type TBrandDealItemProps = {
   deal: TBrandDeal;
@@ -9,7 +9,6 @@ type TBrandDealItemProps = {
 const BrandDealItem = ({ deal }: TBrandDealItemProps) => {
   const { ref, inView } = useInView({ triggerOnce: true });
   const progress = useBrandDealProgress(inView, deal.stockPercentage);
-
   return (
     <li ref={ref}>
       <a>

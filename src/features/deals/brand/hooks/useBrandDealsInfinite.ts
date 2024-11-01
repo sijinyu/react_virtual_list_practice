@@ -1,7 +1,7 @@
 import { queryKeys } from '@/constants';
-import { fetchBrandDeals } from '@/services/api';
+import { fetchBrandDeals } from '../api';
 import { useInfiniteQuery } from '@tanstack/react-query';
-import { TBrandDealResponse } from '@/core/types';
+import { TBrandDealResponse } from '../types';
 
 export const useBrandDealsInfinite = (initialData?: TBrandDealResponse) => {
   return useInfiniteQuery({

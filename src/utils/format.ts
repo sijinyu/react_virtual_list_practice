@@ -12,17 +12,15 @@ export interface BaseTransformedItem {
 export const transformNaverItem = <T extends BaseTransformedItem>(
   item: TNaverShopItem
 ): T => {
-  const originalPrice = parseInt(item.hprice);
-  const discountedPrice = parseInt(item.lprice);
+  const discountRate = Math.floor(Math.random() * (70 - 10 + 1)) + 10;
+  const originalPrice = Math.ceil((item.lprice * 100) / (100 - discountRate));
 
   const transformed: BaseTransformedItem = {
     id: parseInt(item.productId),
     title: item.title.replace(/<[^>]*>?/g, ''),
     originalPrice,
-    discountedPrice,
-    discountRate: Math.round(
-      ((originalPrice - discountedPrice) / originalPrice) * 100
-    ),
+    discountRate,
+    discountedPrice: item.lprice,
     image: item.image,
   };
 

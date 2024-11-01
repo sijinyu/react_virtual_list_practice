@@ -1,7 +1,7 @@
 import { useCallback, useMemo } from 'react';
-import { isTimeDealOpen } from '@/utils';
 import { GRID_CONSTANTS } from './useTimeDealGrid';
-import { TCellData, TTimeDealItem } from '@/core/types';
+import { TCellData, TTimeDealItem } from '../types';
+import { isTimeDealOpen } from '@/utils/date';
 
 export const useTimeDealCell = (
   items: TTimeDealItem[],

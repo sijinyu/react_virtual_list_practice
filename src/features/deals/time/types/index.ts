@@ -1,15 +1,9 @@
+import { BaseTransformedItem } from '@/utils/format';
 import { CSSProperties } from 'react';
 
 export type TTimeDealType = 'current' | 'next';
 
-export type TTimeDealItem = {
-  id: number;
-  title: string;
-  originalPrice: number;
-  discountedPrice: number;
-  discountRate: number;
-  image: string;
-};
+export type TTimeDealItem = BaseTransformedItem;
 
 export type TTimeDealResponse = {
   itemList: TTimeDealItem[];

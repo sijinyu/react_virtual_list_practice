@@ -1,8 +1,3 @@
-export type TLureDeal = {
-  id: number;
-  title: string;
-  originalPrice: number;
-  discountedPrice: number;
-  discountRate: number;
-  image: string;
-};
+import { BaseTransformedItem } from '@/utils/format';
+
+export type TLureDeal = BaseTransformedItem;

@@ -22,7 +22,10 @@ const TimeDealItem = ({ item, isOpen }: TTimeDealItemProps) => (
       <Card.Content>
         <Card.Title title={item.title} />
         <div>
-          <Card.Price discountedPrice={item.discountedPrice} />
+          <Card.Price
+            discountRate={item.discountRate}
+            discountedPrice={item.discountedPrice}
+          />
         </div>
       </Card.Content>
     </Card>

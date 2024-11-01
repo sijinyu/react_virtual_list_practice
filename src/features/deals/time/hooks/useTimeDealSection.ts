@@ -1,8 +1,8 @@
 import { useState, useCallback, useMemo, useRef } from 'react';
 import { List, Index } from 'react-virtualized';
-import { useTimeDeal } from '@/hooks/useTimeDeal';
-import { TTimeDealType, TTimeDealItem as TimeDealItemType } from '@/core/types';
-import { useTimeDealTabs } from '@/hooks/useTimeDealTime';
+import { TTimeDealType, TTimeDealItem as TimeDealItemType } from '../types';
+import { useTimeDealTabs } from './useTimeDealTime';
+import { useTimeDeal } from './useTimeDeal';
 
 const ASPECT_RATIO = 0.6397; // 이미지의 가로 세로 비율
 const MIN_ROW_HEIGHT = 240; // 행의 최소 높이

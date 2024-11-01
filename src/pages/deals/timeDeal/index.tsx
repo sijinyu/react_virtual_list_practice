@@ -15,7 +15,7 @@ const TimeDeal = () => {
         <LureDealSection />
       </ErrorBoundary>
       <ErrorBoundary FallbackComponent={ErrorFallback}>
-        <BrandDealSection />
+        <BrandDealSection type='thumnail' />
       </ErrorBoundary>
       <ErrorBoundary
         FallbackComponent={FullScreenError}

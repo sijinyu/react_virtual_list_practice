@@ -3,11 +3,14 @@ import { TTimeDealResponse } from '../types';
 import { api } from '@/core/api/client';
 import { transformNaverItem } from '@/utils/format';
 
-export const fetchTimeDeals = async (): Promise<TTimeDealResponse> => {
+export const fetchTimeDeals = async (
+  page: number
+): Promise<TTimeDealResponse> => {
   const response = await api.get<TNaverShopResponse>('', {
     params: {
       query: '타임딜',
-      display: 20,
+      display: 20, // 임시
+      start: page * 20, // 임시
     },
   });
 

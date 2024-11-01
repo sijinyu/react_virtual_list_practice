@@ -2,9 +2,13 @@ import { useNavigate } from 'react-router-dom';
 import { useBrandDealsInfinite } from '@/features/deals/brand/hooks/useBrandDealsInfinite';
 import BrandDealListView from './BrandDealListView';
 import { webPath } from '@/core/router';
-import { useCallback } from 'react';
+import { Fragment, useCallback } from 'react';
+import BrandDealItem from './BrandDealItem';
 
-const BrandDealSection = () => {
+type TBrandDealSection = {
+  type: 'thumnail' | 'list';
+};
+const BrandDealSection = ({ type }: TBrandDealSection) => {
   const { data, isLoading, isError, isFetchingNextPage } =
     useBrandDealsInfinite();
   const navigate = useNavigate();
@@ -15,14 +19,25 @@ const BrandDealSection = () => {
 
   if (isLoading) return <div>로딩 중...</div>;
   if (isError) throw new Error('브랜드 딜을 불러오는데 실패했습니다.');
-
+  const deals = data?.pages.flatMap((page) => page.itemList) || [];
+  const isThumnail = type === 'thumnail';
   return (
     <section>
-      <BrandDealListView
-        deals={data?.pages.flatMap((page) => page.itemList) || []}
-        onGoToBrandDeal={handleClickGoToBrandDeal}
-      />
-      {isFetchingNextPage && <div>추가 로딩 중...</div>}
+      {isThumnail ? (
+        <BrandDealListView
+          deals={deals}
+          onGoToBrandDeal={handleClickGoToBrandDeal}
+        />
+      ) : (
+        deals.map((deal) => {
+          return (
+            <Fragment key={deal.id}>
+              <BrandDealItem deal={deal} />
+              {isFetchingNextPage && <div>추가 로딩 중...</div>}
+            </Fragment>
+          );
+        })
+      )}
     </section>
   );
 };

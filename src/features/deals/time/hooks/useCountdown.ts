@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { calculateTimeLeft } from '@/utils';
 import { TIME_INTERVAL_MS } from '@/constants';
+import { calculateTimeLeft } from '@/utils/time';
 
 export const useCountdown = (endDate: string) => {
   const [timeLeft, setTimeLeft] = useState<string>(calculateTimeLeft(endDate));

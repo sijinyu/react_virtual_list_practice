@@ -1,4 +1,4 @@
-import { getTimeDealTabs } from '@/utils';
+import { getTimeDealTabs } from '@/utils/date';
 import { useState, useEffect } from 'react';
 
 export type TTabInfo = {

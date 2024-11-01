@@ -1,6 +1,6 @@
 import Card from '@/components/ui/Card';
-import { TLureDeal } from '@/core/types';
 import { memo } from 'react';
+import { TLureDeal } from '../types';
 
 type TLureDealCardProps = {
   deal: TLureDeal;
